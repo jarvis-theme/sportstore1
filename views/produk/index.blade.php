@@ -66,7 +66,7 @@
 				<li style="padding:0;">
 					<div class="img" style="text-align: center;width:100%;">
 						<a href="{{slugKoleksi($mykoleksi)}}">
-							{{HTML::image(koleksi_image_url($mykoleksi->gambar,'thumb'), $mykoleksi->nama, array('height' => '60px'));}}
+							{{HTML::image(koleksi_image_url($mykoleksi->gambar), $mykoleksi->nama, array('height' => '60px'));}}
 						</a>
 					</div>
 	<!-- <div class="text float-left">
@@ -112,9 +112,9 @@
 					</div>
 				</div>
 				<div class="limit">Limit
-					<select onchange="if (this.value) window.location.href='{{url('produk?show=')}}'+this.value">
-						<option value="12" {{ Input::get('show') == 12 ? 'selected' : ''}}>12</option>
-						<option value="24" {{ Input::get('show') == 24 ? 'selected' : ''}}>24</option>
+					<select onchange="if (this.value) window.location.href=this.value">
+						<option value="{{Request::url().'?show=12'}}" {{ Input::get('show') == 12 ? 'selected' : ''}}>12</option>
+						<option value="{{Request::url().'?show=24'}}" {{ Input::get('show') == 24 ? 'selected' : ''}}>24</option>
 					</select>
 				</div>
 			</div>
@@ -159,9 +159,9 @@
 				<div class="pagination">
 
 					<div class="links">
-						{{list_product(12,@$category, @$collection)->appends(['show' => \Input::get('show',12)])->links()}}
+						{{list_product(Input::get('show',null),@$category, @$collection)->appends(['show' => \Input::get('show',null)])->links()}}
 					</div>
-					<div class="results">Showing {{list_product(12,@$category, @$collection)->getFrom()}} to {{ceil(list_product(12,@$category, @$collection)->getTotal()/list_product(12,@$category, @$collection)->getPerPage())}} page(s)</div>
+					<div class="results">Showing {{list_product(Input::get('show',null),@$category, @$collection)->getFrom()}} to {{ceil(list_product(Input::get('show',null),@$category, @$collection)->getTotal()/list_product(12,@$category, @$collection)->getPerPage())}} page(s)</div>
 				</div>
 			</div>
 		</div>

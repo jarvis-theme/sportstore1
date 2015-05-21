@@ -1,9 +1,14 @@
-define(['jquery','cookie','cart'], function($,cookie,cart)
+define(['jquery','cookie','cart','colorbox'], function($,cookie,cart,colorbox)
 {
 	return new function(){
 		var self = this;
 		self.run = function(){
 			
+			$('.colorbox').colorbox({
+				overlayClose: true,
+				opacity: 0.5
+			});
+
 			cart.run();
 
 			$("#review").click(function(){

@@ -125,17 +125,17 @@
 					<div class="image-additional">
 						@if($produk->gambar2!='')
 						<a href="{{URL::to(product_image_url($produk->gambar2))}}" class="colorbox" rel="colorbox">
-							{{HTML::image(product_image_url($produk->gambar2,'large'))}}
+							{{HTML::image(product_image_url($produk->gambar2,'thumb'))}}
 						</a>
 						@endif
 						@if($produk->gambar3!='')
 						<a href="{{URL::to(product_image_url($produk->gambar3))}}" class="colorbox" rel="colorbox">
-							{{HTML::image(product_image_url($produk->gambar2,'large'))}}
+							{{HTML::image(product_image_url($produk->gambar2,'thumb'))}}
 						</a>
 						@endif
 						@if($produk->gambar4!='')
 						<a href="{{URL::to(product_image_url($produk->gambar4))}}" class="colorbox" rel="colorbox">
-							{{HTML::image(product_image_url($produk->gambar4,'large'))}}
+							{{HTML::image(product_image_url($produk->gambar4,'thumb'))}}
 						</a>
 						@endif
 					</div>

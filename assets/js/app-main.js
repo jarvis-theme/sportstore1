@@ -23,6 +23,9 @@ require.config({
 		"tabs" : {
 			deps : ['jquery'],
 		},
+		'colorbox' : {
+			deps : ['jquery']
+		}
 	},
 
 	paths: {
@@ -38,6 +41,7 @@ require.config({
 		simpletabs		: dirTema+'/assets/js/libs/simpletabs_1.3',
 		cookie			: dirTema+'/assets/js/libs/jquery.cookie',
 		tabs			: dirTema+'/assets/js/libs/tabs',
+		colorbox			: dirTema+'/assets/js/libs/jquery.colorbox-min',
 		
 
 		// Harus Ada

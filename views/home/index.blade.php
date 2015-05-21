@@ -55,9 +55,8 @@
 		<div class="box-color-1-text">
 			<!-- List items -->
 			<ul class="list-items">
-				<?php $count=1;?>
+				<?php $count=0;?>
 				@foreach(best_seller() as $key=>$myproduk)
-				@if($myproduk->terlaris=='1')
 				<li>
 					<div class="img float-left">
 						<a href="{{slugProduk($myproduk)}}">
@@ -72,11 +71,11 @@
 					</div>
 					<p class="clear"></p>
 				</li>
-				<?php $count++;?>
 				@if ($count>=15)
 				<?php break;?>
 				@endif
-				@endif
+
+				<?php $count++;?>
 				@endforeach
 			</ul>
 			<ul class="btn">
@@ -108,7 +107,7 @@
 							<ul id="newest-products2" class="jcarousel-list jcarousel-list-horizontal" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: -510px; width: 1460px;">
 								<!-- Item -->
 
-								@foreach(latest_product() as $key=>$myproduk)
+								@foreach(new_product() as $key=>$myproduk)
 
 								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-{{$key}} jcarousel-item-{{$key}}-horizontal" style="float: left; list-style: none;" jcarouselindex="{{$key}}">
 									<!-- Img -->
